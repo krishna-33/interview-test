@@ -34,29 +34,29 @@ export default function PurchaseTable() {
                 <Table sx={{ minWidth: 700 }} aria-label="spanning table">
                     <TableHead sx={{ backgroundColor: "#EFF2F4" }}>
                         <TableRow>
-                            <TableCell sx={{ border: "1px solid" }}>ITEM CODE</TableCell>
-                            <TableCell sx={{ border: "1px solid" }}>ITEM</TableCell>
-                            <TableCell sx={{ border: "1px solid" }}>Quantity</TableCell>
-                            <TableCell sx={{ border: "1px solid" }}>UOM</TableCell>
-                            <TableCell sx={{ border: "1px solid" }}>Price</TableCell>
-                            <TableCell sx={{ border: "1px solid" }}>Shipping method</TableCell>
+                            <TableCell sx={{ border: "1px solid", fontSize:"10.5px" }}>ITEM CODE</TableCell>
+                            <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>ITEM</TableCell>
+                            <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>Quantity</TableCell>
+                            <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>UOM</TableCell>
+                            <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>Price</TableCell>
+                            <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>Shipping method</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow key={row.code}>
-                                <TableCell sx={{ border: "1px solid" }} >{row.code}</TableCell>
-                                <TableCell sx={{ border: "1px solid" }}>{row.name}</TableCell>
-                                <TableCell sx={{ border: "1px solid" }}>{row.qty}</TableCell>
-                                <TableCell sx={{ border: "1px solid" }}>{row.uom}</TableCell>
-                                <TableCell sx={{ border: "1px solid" }}>₹ {ccyFormat(row.price)}</TableCell>
-                                <TableCell sx={{ border: "1px solid" }}>{row.shipping_method}</TableCell>
+                                <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }} >{row.code}</TableCell>
+                                <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>{row.name}</TableCell>
+                                <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>{row.qty}</TableCell>
+                                <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>{row.uom}</TableCell>
+                                <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>₹ {ccyFormat(row.price)}</TableCell>
+                                <TableCell sx={{ border: "1px solid", fontSize:"10.5px"  }}>{row.shipping_method}</TableCell>
                             </TableRow>
                         ))}
 
                     </TableBody>
                 </Table>
-                <Box sx={{ float: "right", width: "348px" }} >
+                <Box sx={{ float: "right", width: "348px", fontSize:"12px" }} >
                     <Stack display={"flex"} direction={"row"} justifyContent={"space-between"} spacing={4} p={2}>
                         <Box>Sub Total</Box>
                         <Box>12,000.00 INR</Box>
