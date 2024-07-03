@@ -1,17 +1,10 @@
-import * as React from 'react';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
+import  React from 'react';
+import {Breadcrumbs, Typography, Stack} from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { NavLink } from 'react-router-dom';
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info('You clicked a breadcrumb.');
-}
 
-export default function CustomBreadCum() {
+const CustomBreadCum = () => {
   const breadcrumbs = [
     <NavLink to="/">Accounting</NavLink>,
     <NavLink to="/purchase-order">Purchase Order</NavLink>,
@@ -26,11 +19,13 @@ export default function CustomBreadCum() {
   return (
     <Stack spacing={2} mt={5}>
       <Breadcrumbs
-        separator={<NavigateNextIcon fontSize="small" />}
+        separator={<NavigateNextIcon fontSize="small" sx={{fill: "#304FFE"}} />}
         aria-label="breadcrumb"
+        sx={{fontWeight:700}}
       >
         {breadcrumbs}
       </Breadcrumbs>
     </Stack>
   );
 }
+export default CustomBreadCum

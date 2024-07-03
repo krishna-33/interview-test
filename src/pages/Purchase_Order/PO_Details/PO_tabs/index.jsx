@@ -1,9 +1,7 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import PurchaseTable from './purchase_table';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Tabs, Tab, Box } from "@mui/material";
+import PurchaseTable from "./purchase_table";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -30,26 +28,34 @@ CustomTabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
-export default function POTable() {
-  const [value, setValue] = React.useState(0);
+export default function POTabs() {
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"  sx={{
-          '& .MuiTabs-scroller .MuiTabs-flexContainer .Mui-selected': {
-            outline: 'none'
-          },
-        }}>
-          <Tab label="Purchase Information" {...a11yProps(0)}  />
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider"}} className="PO-tabs">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          sx={{
+            "& .MuiTabs-scroller .MuiTabs-flexContainer .Mui-selected": {
+              outline: "none",
+            },
+            "& .MuiTab-root:focus": {
+              outline: "none",
+            },
+          }}
+        >
+          <Tab label="Purchase Information" {...a11yProps(0)} />
           <Tab label="Attachments" {...a11yProps(1)} />
           <Tab label="Terms & Conditions" {...a11yProps(2)} />
           <Tab label="Additional Information" {...a11yProps(3)} />

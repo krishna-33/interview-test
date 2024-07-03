@@ -1,5 +1,5 @@
-import { Avatar, Box, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Stack } from "@mui/material"
-import { NavLink } from "react-router-dom"
+import React from "react"
+import { List, ListItem, ListItemText } from "@mui/material"
 
 const DetailList = ({list}) => {
     return(
@@ -11,7 +11,7 @@ const DetailList = ({list}) => {
                     <ListItemText primary={item.value} />
                 }
             >
-                <ListItemText primary={item.label} />
+                <ListItemText primary={item.label} sx={{color: "#667085"}} />
             </ListItem>
         ))}
     </List>

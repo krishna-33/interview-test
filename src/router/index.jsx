@@ -1,19 +1,22 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
-import Home from "../pages/Home";
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import Accounting from "../pages/Accounting";
 import PurchaseOrder from "../pages/Purchase_Order";
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/purchase-order",
-      element: <PurchaseOrder />,
-    },
-  ]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Outlet />, 
+    children: [
+      {
+        path: "",
+        element: <Accounting />, 
+      },
+      {
+        path: "purchase-order", 
+        element: <PurchaseOrder />, 
+      },
+    ],
+  },
+]);
 
-  export default router
+export default router;
