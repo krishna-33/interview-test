@@ -12,7 +12,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo.svg';
+import Profile from '../../assets/profile.svg'
+import Cart from '../../assets/cart.svg'
 import { Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
@@ -46,11 +48,18 @@ const Header = () => {
         <Toolbar disableGutters sx={{ display: "flex", justifyContent: "space-between" }}>
           <NavLink to="/" > <img src={Logo} alt="logo" /></NavLink>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Profile">
+            <Stack display={"flex"} direction={"row"} justifyContent={"center"} spacing={2}>
+          <Tooltip title="Cart">
               <IconButton sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar src={Cart} alt="cart" sx={{ width: 25, height:25 }} />
               </IconButton>
             </Tooltip>
+            <Tooltip title="Profile">
+              <IconButton sx={{ p: 0 }}>
+                <Avatar src={Profile} alt="profile" />
+              </IconButton>
+            </Tooltip>
+            </Stack>
           </Box>
         </Toolbar>
       </Container>

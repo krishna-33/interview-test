@@ -29,6 +29,12 @@ font-size: 10.5px;
 .MuiTabs-scroller button{
   text-transform: capitalize;
 }
+.MuiTabs-root .MuiButtonBase-root {
+  font-size: 10.5px;
+}
+.MuiTabs-scroller .MuiTabs-flexContainer{
+  justify-content: sp;
+}
 /* button.MuiButtonBase-root.MuiTab-root {
   border: 2px solid #1976d2;
   border-radius: 6px;
@@ -54,7 +60,9 @@ font-size: 10.5px;
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
+/* span.MuiTypography-root.MuiTypography-body1.MuiListItemText-primary.MuiTypography-root {
+  color: #10182;
+} */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

@@ -44,8 +44,12 @@ export default function POTable() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Purchase Information" {...a11yProps(0)} />
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"  sx={{
+          '& .MuiTabs-scroller .MuiTabs-flexContainer .Mui-selected': {
+            outline: 'none'
+          },
+        }}>
+          <Tab label="Purchase Information" {...a11yProps(0)}  />
           <Tab label="Attachments" {...a11yProps(1)} />
           <Tab label="Terms & Conditions" {...a11yProps(2)} />
           <Tab label="Additional Information" {...a11yProps(3)} />

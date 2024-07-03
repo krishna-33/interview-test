@@ -79,7 +79,7 @@ const PurchaseOrder = () => {
                                         </Grid>
                                         <Grid item xs={6}>
 
-                                            <FormController lable={"Status"} defaultVal={"Draf"} />
+                                            <FormController lable={"Status"} defaultVal={"Draft"} />
                                         </Grid>
                                     </Grid>
 
